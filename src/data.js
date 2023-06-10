@@ -1,14 +1,8 @@
-import React, { useState } from 'react';
-import Table from 'react-bootstrap/Table';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { data } from './data.js';
+//import React from "react";
+//import { useState,useEffect } from "react";
+//import Select from "react-dropdown-select";
 
-function App() {
-  
-  const [tableData, setTableData] = useState([
+export const data = [
     {
       id: 1,
        Claim_ID: '12345678',
@@ -105,67 +99,8 @@ function App() {
        Approved_Amount: 'Rs. 14,000,000',
        Hospital: 'Apollo Hospital',
     },
-  ]);
-  const [searchQuery, setSearchQuery] = useState('');
+    
+  ];
 
-  const handleSearch = (e) => {
-    setSearchQuery(e.target.value);
-  };
   
-  const filteredData = data.filter(
-    (item) =>
-      item.Status.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.Stage.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  return (
-    <div>
-      <Container>
-        <h1 className='text-center mt-4'></h1>
-        <Form>
-          <InputGroup className="my-3">
-            <Form.Control
-              type="text"
-              placeholder="Search"
-              onChange={handleSearch}
-              value={searchQuery}
-            />
-          </InputGroup>
-        </Form>
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-            <th>Claim ID</th>
-              <th>Name</th>
-              <th>Ailment</th>
-              <th>SLA</th>
-              <th>P-TAT</th>
-              <th>Stage</th>
-              <th>Status</th>
-              <th>Approved Amount</th>
-              <th>Hospital</th>
-            </tr>
-          </thead>
-          <tbody>
-          {filteredData.map((item) => (
-              <tr key={item.id}>
-                
-                  <td>{item.Claim_ID}</td>
-                  <td>{item.Name}</td>
-                  <td>{item.Ailment}</td>
-                  <td>{item.SLA}</td>
-                  <td>{item.P_TAT}</td>
-                  <td>{item.Stage}</td>
-                  <td>{item.Status}</td>
-                  <td>{item.Approved_Amount}</td>
-                  <td>{item.Hospital}</td>
-                </tr>
-              ))}
-          </tbody>
-        </Table>
-      </Container>
-    </div>
-  );
-}
-
-export default App;
+            

@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.table-striped>tbody>tr:nth-child(even)>td {
+ background-color: #EAFFFC;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td {
+  background-color: white;
+ }
+ .table > thead > tr > th{
+  background-color: #4C9EAA;
+  }
